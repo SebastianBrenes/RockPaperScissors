@@ -37,7 +37,13 @@ function playGame() {
     for (let index = 1; index <= 5; index++) {
         let computerChoice = getComputerChoice();
         let humanChoice = getHumanChoice();
-        console.log(whoWonRound(computerChoice, humanChoice)); 
+        let result = whoWonRound(computerChoice, humanChoice); 
+        if (result !== "Tie! Choose again!") {
+            console.log(result);
+        } else {
+            console.log(result);
+            index--;
+        }
     }
     if (humanScore > computerScore) {
         console.log("You Won the Game! Congrats!");
