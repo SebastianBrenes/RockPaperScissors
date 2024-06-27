@@ -13,3 +13,15 @@ function getComputerChoice() {
     }
 }
 
+function getHumanChoice() {
+    return prompt("What do you choose? (Rock, Paper or Scissors)");
+}
+
+
+function whoWon(computer, human) {
+    
+}
+
+// let computerChoice = getComputerChoice();
+// let humanChoice = getHumanChoice();
+// console.log(computerChoice + humanChoice);
