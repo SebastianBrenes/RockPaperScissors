@@ -33,23 +33,24 @@ function whoWonRound(computer, human) {
     }
 }
 
-function playGame() {
-    for (let index = 1; index <= 5; index++) {
-        let computerChoice = getComputerChoice();
-        let humanChoice = getHumanChoice();
+function playGame() {    
+    let choiceContainer = document.querySelector('.container');
+    choiceContainer.addEventListener('click', (event) => { // Event listener getting the option taken by the user
+
+        let computerChoice = getComputerChoice(); // Computer choice his option
+
+        let target = event.target;
+        let humanChoice = target.id;
+        console.log('Your choice is ' + target.id); 
+        console.log('Computer choice is ' + computerChoice);
+
         let result = whoWonRound(computerChoice, humanChoice); 
         if (result !== "Tie! Choose again!") {
             console.log(result);
         } else {
             console.log(result);
-            index--;
         }
-    }
-    if (humanScore > computerScore) {
-        console.log("You Won the Game! Congrats!");
-    } else {
-        console.log("You lost! Try Again!");
-    }
+    })
 }
 
 
